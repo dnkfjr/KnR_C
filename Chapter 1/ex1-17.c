@@ -2,6 +2,7 @@
 #define MAXLINE 1000
 
 // program will print out lines that are longer than 80 characters
+// maximum characters that can be printed is 999
 
 int getline(char line[], int maxline);
 void copy(char to[], char from []);
