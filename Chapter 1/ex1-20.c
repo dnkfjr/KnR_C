@@ -5,7 +5,7 @@
 // replace tabs with spaces
 
 int getline(char line[], int maxchar);
-void detab(char source[], int strlen, char dest[]);
+int detab(char source[], int strlen, char dest[]);
 
 int main(void){
 
@@ -17,7 +17,7 @@ int main(void){
     if (len == 1)
       continue;
     else {
-      detab (line, len, detabbed);
+      len = detab (line, len, detabbed);
       printf("%s", detabbed);
     }
   }
@@ -41,7 +41,7 @@ int getline(char s[], int lim){
   return i;
 }
 
-void detab(char s[], int strlen, char d[]){
+int detab(char s[], int strlen, char d[]){
 
   int i, j, c;
   int step;
@@ -61,4 +61,6 @@ void detab(char s[], int strlen, char d[]){
     }
   d[j++] = '\n';
   d[j] = '\0';
+
+  return j;
 }
